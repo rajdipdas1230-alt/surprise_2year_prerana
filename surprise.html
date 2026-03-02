@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      color: white;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.65);
+      padding: 25px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
+      z-index: 2;
+    }
+
+    h1, h2 {
+      margin: 10px 0;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 8px;
+      border: none;
+      border-radius: 25px;
+      background: #ff4b5c;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 80%;
+      max-width: 250px;
+    }
+
+    button:hover {
+      background: #ff1e38;
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(15px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .hidden-message {
+      display: none;
+      margin-top: 15px;
+      font-size: 16px;
+      color: #ffd700;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 18px;
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0); }
+      100% { transform: translateY(-110vh) rotate(360deg); }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="card" id="content">
+  <h2>HELLO ❤️</h2>
+  <p>I made something special for you...</p>
+  <button onclick="nextStep(1)">I'm Ready 💕</button>
+</div>
+
+<script>
+
+  let slideIndex = 0;
+  let slideshowInterval;
+
+  function nextStep(step) {
+    const content = document.getElementById("content");
+
+    if(step === 1){
+      content.innerHTML = `
+        <h2>2 Years With You ❤️</h2>
+        <p>These 2 years have been the most cheerful and beautiful part of my life.</p>
+        <button onclick="nextStep(2)">See Our Memories 📸</button>
+      `;
+    }
+
+    if(step === 2){
+      content.innerHTML = `
+        <h2>Our Beautiful Memories 💕</h2>
+        <img id="slideshow" src="photo1.jpg">
+        <button onclick="nextStep(3)">Next 💖</button>
+      `;
+
+      startSlideshow();
+    }
+
+    if(step === 3){
+      clearInterval(slideshowInterval);
+      content.innerHTML = `
+        <h2>Why I Love You ❤️</h2>
+        <p>
+          Tomar oi Hashi 😍<br>
+          Tomar Baccha Baccha Mon 💖<br>
+          Tomar support 🤗<br>
+          Ebhabei Sarajion theke jaaooo ☀️
+        </p>
+        <button onclick="nextStep(4)">Final Surprise 🎁</button>
+      `;
+    }
+
+    if(step === 4){
+      content.innerHTML = `
+        <h1>Happy 2 Years, Baccha ❤️</h1>
+        <p>This is just the beginning of our forever 💍</p>
+        <button onclick="stayForever()">Stay Forever 💍</button>
+        <button onclick="showGift()">Unlock Hidden Gift 🎁</button>
+        <div class="hidden-message" id="gift">
+          সালটা ২০২৪ , জানুয়ারী মাস এর ১৮ তারিখ, হটাৎ করেই তোমার সাথে কথা হওয়া। কখনো ভাবিনি তখন যে তোমার আর আমার এভাবে কিছু হবে। 
+
+যাই হোক, কথা হওয়া শুরু হল প্রথমে chat তারপর ফোন, এবার ডেট জিজ্ঞেস করে লজ্জা দেবেনা তুমি তো জানো যে আমি অত মনে রাখতে পারিনা 🥲 , তো তারপর আরো জানলাম দুজনে দুজনকে , আস্তে আস্তে কাছে এলাম, আর আজকের দিনে ২ বছর আগে আমাদের একসাথে পথ চলার একটা অধ্যায় শুরু হল চিরজীবন পাশে থাকার অঙ্গীকার নিয়ে ♥️
+
+অনেক ঝামেলা অনেক কিছু পেরিয়ে আজ আমরা ২ টি বছর একসাথে একে অপরকে বুঝে নিয়ে থেকে গেলাম, এটা যেনো আমরা সারাজীবন চলতে পারি 
+
+অনেক কিছু আছে আমাদের জীবনে করার, কিন্তু হাত টা শক্ত করে ধরে জীবনের লড়াই গুলো একসাথে লড়তে চাই ♥️🔥
+
+অনেককিছু বললাম, তবে যেগুলো বলা হলোনা তার লিস্ট  টাই বড় 
+
+যাই হোক, শুভ দ্বিতীয় ♥️
+
+অনেক ভালবাসা ♥️❤️
+        </div>
+      `;
+
+      confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+    }
+  }
+
+  function startSlideshow() {
+    const images = ["photo1.jpg", "photo2.jpg", "photo3.jpg"];
+    const slide = document.getElementById("slideshow");
+
+    slideshowInterval = setInterval(() => {
+      slideIndex = (slideIndex + 1) % images.length;
+      slide.src = images[slideIndex];
+    }, 2000);
+  }
+
+  function showGift() {
+    document.getElementById("gift").style.display = "block";
+  }
+
+  function stayForever() {
+    alert("YOU said YES to forever ❤️😭");
+  }
+
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 6000);
+  }
+
+  setInterval(createHeart, 500);
+
+</script>
+
+</body>
+</html>
